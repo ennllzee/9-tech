@@ -1,24 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Contact from "./components/Contact/Contact";
+import Foundation from "./components/Foundation/Foundation";
+import Home from "./components/Home/Home";
+import Service from "./components/Service/Service";
+import Page from "./components/TabPanel";
 
 function App() {
+
+  const [offset, setOffset] = useState(document.documentElement.scrollTop);
+
+  window.onscroll = (e: any) => {
+    setOffset(document.documentElement.scrollTop);
+  };
+
+  const [value, setValue] = useState<string>("home");
+
+  useEffect(() => {
+    var home = document.getElementById("home")?.scrollHeight
+    var foundation = document.getElementById("foundation")?.scrollHeight
+    var service = document.getElementById("service")?.scrollHeight
+
+    if(home !== undefined && offset > home/2){
+      if(foundation !== undefined && offset > home + foundation/2){
+        if(service !== undefined && offset > home + foundation + service/2){
+            setValue('contact')
+        }else{
+          setValue('service')
+        }
+      }else{
+        setValue('foundation')
+      }
+    }else{
+      setValue('home')
+    }
+  }, [offset]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <main>
+        <Page page={value} setPage={setValue} />
+        <div id="home">
+          <Home />
+        </div>
+        <div id="foundation">
+          <Foundation />
+        </div>
+        <div id="service">
+          <Service />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+      </main>
     </div>
   );
 }
