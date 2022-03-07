@@ -8,8 +8,20 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 const theme = createMuiTheme({
   typography: {
     fontFamily: ["Prompt", "cursive"].join(","),
+}});
+
+theme.typography.h1 = {
+  fontSize: '1.75rem',
+  '@media (min-width:600px)': {
+    fontSize: '2.5rem',
   },
-});
+  [theme.breakpoints.up('md')]: {
+    fontSize: '4rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '5rem',
+  },
+};
 
 ReactDOM.render(
   <React.StrictMode>
