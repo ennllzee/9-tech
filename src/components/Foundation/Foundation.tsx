@@ -29,7 +29,7 @@ function Foundation() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
       <Grid
         container
         className={classes.main}

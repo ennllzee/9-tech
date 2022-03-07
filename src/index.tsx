@@ -23,6 +23,8 @@ theme.typography.h1 = {
   },
 };
 
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
