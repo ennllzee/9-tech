@@ -1,5 +1,4 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {

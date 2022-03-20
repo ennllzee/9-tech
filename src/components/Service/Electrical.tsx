@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core";
 import {
   AssignmentTurnedIn,
-  AssignmentTurnedInOutlined,
 } from "@material-ui/icons";
 import Image from "../../models/Image";
 import CarouselShow from "./CarouselShow";
