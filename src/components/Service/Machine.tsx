@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginBottom: -5,
+    color: "#FFC300",
   },
   subtitle: {
     paddingTop: "2%",
@@ -62,24 +63,36 @@ function Machine() {
       <Grid item xs={12} md={12} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            งานซ่อมเครื่องจักรอุตสาหกรรม
+            งานซ่อมเครื่องจักรอุตสาหกรรม | Machine Maintainance Services
           </Typography>
           <Divider className={classes.divider}/>
           <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
-            Equipment Repair Inverter, PLC, Controller Board, AC/DC Servo Drive etc.
+            ติดตั้งและซ่อมแซม Inverter, PLC, Controller Board, AC/DC Servo Drive etc.
+          </Typography>
+          <Typography align="left" variant="body1">
+            (Equipment and Repair Inverter, PLC, Controller Board, AC/DC Servo Drive etc.)
           </Typography>
           <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
-            Modify โปรแกรมควบคุมเครื่องจักร วงจร Relay, PLC program
+            ปรับปรุงโปรแกรมควบคุมเครื่องจักร วงจร Relay, PLC program
+          </Typography>
+          <Typography align="left" variant="body1">
+            (Modify Relay Monitoring, PLC program)
           </Typography>
           <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
             รับซ่อมเครื่องจักร ระบบไฟฟ้า, แมคคานิค, นิวเมติก, ไฮดรอลิก
           </Typography>
           <Typography align="left" variant="body1">
+            (Repair Electrical, Mechanical, Pneumatic, Hydraulic Machines)
+          </Typography>
+          <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
             รับทำ Preventive Maintenance เครื่องจักรทุกชนิด
+          </Typography>
+          <Typography align="left" variant="body1">
+            (Preventive Maintenance of all types of Machines)
           </Typography>
         </Container>
       </Grid>

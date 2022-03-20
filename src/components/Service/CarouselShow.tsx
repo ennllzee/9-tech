@@ -44,7 +44,7 @@ function CarouselShow({ pics }: CarouselProps) {
   return (
     <Carousel
       interval={5000}
-      autoPlay={true}
+      autoPlay={false}
       stopAutoPlayOnHover={true}
       indicatorContainerProps={{
         style: {

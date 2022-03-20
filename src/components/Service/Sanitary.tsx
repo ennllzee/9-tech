@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginBottom: -5,
+    color: "#FFC300",
   },
   subtitle: {
     paddingTop: "2%",
@@ -62,7 +63,7 @@ function Sanitary() {
       <Grid item xs={12} md={12} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            งานระบบประปาและสุขาภิบาล
+            งานระบบประปาและสุขาภิบาล | Sanitary System
           </Typography>
           <Divider className={classes.divider}/>
           <Typography align="left" variant="body1">
@@ -70,16 +71,28 @@ function Sanitary() {
             ออกแบบ ติดตั้ง ปรับปรุง แก้ไข ระบบประปาและสุขาภิบาล
           </Typography>
           <Typography align="left" variant="body1">
+            (Design, Installation, Improvement of Water and Sanitation Systems)
+          </Typography>
+          <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
-            ตรวจสอบคุณภาพและความหนาของท่อ ติดตั้งปั๊ม
+            ตรวจสอบคุณภาพและความหนาของท่อ ติดตั้งปั๊ม Overhaul Pump
+          </Typography>
+          <Typography align="left" variant="body1">
+            (Check the Quality and Thickness of the Pipe, Install the Overhaul Pump)
           </Typography>
           <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
             งานติดต่อท่อน้ำ PPR, HDPE, ระบายน้ำฝน
           </Typography>
           <Typography align="left" variant="body1">
+            (Installation of PPR, HDPE Water Pipes, Rainwater Drainage)
+          </Typography>
+          <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
             บริการปรับปรุงระบบระบายอากาศ ภายในอาคารสูง
+          </Typography>
+          <Typography align="left" variant="body1">
+            (Ventilation System Improvement Services Inside the High Building)
           </Typography>
         </Container>
       </Grid>

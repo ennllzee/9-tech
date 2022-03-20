@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginBottom: -5,
+    color: "#FFC300",
   },
   subtitle: {
     paddingTop: "2%",
@@ -54,7 +55,7 @@ function Equipment() {
       <Grid item xs={12} md={12} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            อุปกรณ์ไฟฟ้า
+            อุปกรณ์ไฟฟ้า | Electrical Equipment
           </Typography>
           <Divider className={classes.divider}/>
           <Typography align="left" variant="body1">
@@ -62,8 +63,14 @@ function Equipment() {
             จัดหาอะไหล่อุตสาหกรรม และจำหน่ายอุปกรณ์ไฟฟ้าแบบครบวงจร
           </Typography>
           <Typography align="left" variant="body1">
+            (Supply Industrial Parts and Sells a Full Range of Electrical Equipment)
+          </Typography>
+          <Typography align="left" variant="body1">
             <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
             ดูแลการบริการหลังการขาย
+          </Typography>
+          <Typography align="left" variant="body1">
+            (Take Care of After-Sales Service)
           </Typography>
         </Container>
       </Grid>
