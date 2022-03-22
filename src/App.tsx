@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Contact from "./components/Contact/Contact";
+import Foot from "./components/Foot/Foot";
 import Foundation from "./components/Foundation/Foundation";
 import Home from "./components/Home/Home";
 import Service from "./components/Service/Service";
@@ -50,6 +51,9 @@ function App() {
         </div>
         <div id="contact">
           <Contact />
+        </div>
+        <div>
+          <Foot />
         </div>
       </main>
     </div>
