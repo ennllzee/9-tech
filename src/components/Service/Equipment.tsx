@@ -49,10 +49,10 @@ function Equipment() {
       justify="center"
       className={classes.sub}
     >
-      <Grid item xs={12} md={12} lg={3}>
+      <Grid item xs={12} md={3} lg={3}>
         <CarouselShow pics={equipment} />
       </Grid>
-      <Grid item xs={12} md={12} lg={9} className={classes.subtitle}>
+      <Grid item xs={12} md={9} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
             อุปกรณ์ไฟฟ้า | Electrical Equipment

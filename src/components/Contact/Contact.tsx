@@ -12,6 +12,10 @@ import {
   Facebook,
   Language,
   LocalPhone,
+  LocalShipping,
+  LocalShippingOutlined,
+  MeetingRoom,
+  MeetingRoomOutlined,
 } from "@material-ui/icons";
 import { ContentCopy, QrCode } from "@mui/icons-material";
 import { Alert } from "@mui/material";
@@ -94,10 +98,8 @@ function Contact() {
             <Typography align="left" variant="h6" className={classes.subtitle}>
               บริษัท นายน์ เทคนิคอล เซอร์วิส จำกัด
             </Typography>
-          </Grid>
-          <Grid item xs={2} md={2} lg={2}></Grid>
-          <Grid item xs={10} md={10} lg={10}>
             <Typography align="left" variant="body1" className={classes.sub}>
+              <MeetingRoom className={classes.icon} fontSize="small" />{" "}
               สำนักงานใหญ่: 55/293 ซอยประเสริฐมนูกิจ 42 ถนนประเสริฐมนูกิจ
               แขวงนวมินทร์ เขตบึงกุ่ม กรุงเทพฯ 10230{" "}
               <Tooltip title="Copy">
@@ -113,10 +115,32 @@ function Contact() {
                 </IconButton>
               </Tooltip>
             </Typography>
-          </Grid>
+            {/* </Grid>
           <Grid item xs={2} md={2} lg={2}></Grid>
-          <Grid item xs={10} md={10} lg={10}>
+          <Grid item xs={10} md={10} lg={10}> */}
             <Typography align="left" variant="body1" className={classes.sub}>
+              <MeetingRoomOutlined className={classes.icon} fontSize="small" /> Head
+              Office: 55/293 Soi Prasert-Manukitch 42, Prasert-Manukitch Rd.,
+              Nawamin, Khet Bueng Kum, Bangkok 10230{" "}
+              <Tooltip title="Copy">
+                <IconButton
+                  size="small"
+                  className={classes.copy}
+                  onClick={() =>
+                    copy(
+                      `55/293 Soi Prasert-Manukitch 42, Prasert-Manukitch Rd., Nawamin, Khet Bueng Kum, Bangkok 10230`
+                    )
+                  }
+                >
+                  <ContentCopy fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </Typography>
+            {/* </Grid>
+          <Grid item xs={2} md={2} lg={2}></Grid>
+          <Grid item xs={10} md={10} lg={10}> */}
+            <Typography align="left" variant="body1" className={classes.sub}>
+              <LocalShipping className={classes.icon} fontSize="small" />{" "}
               ที่อยู่ส่งเอกสาร / สินค้า: 70/535 หมู่บ้านประชานิเวศน์ 2
               ซอยสามัคคี 58/20 ถนนสามัคคี แขวงท่าทราย เขตนนทบุรี จังหวัดนนทบุรี
               11000{" "}
@@ -134,7 +158,30 @@ function Contact() {
                 </IconButton>
               </Tooltip>
             </Typography>
+            {/* </Grid> */}
+            {/* <Grid item xs={2} md={2} lg={2}></Grid>
+          <Grid item xs={10} md={10} lg={10}> */}
+            <Typography align="left" variant="body1" className={classes.sub}>
+              <LocalShippingOutlined className={classes.icon} fontSize="small" />{" "}
+              Workshop: 70/535 Prachaniwet 2 Soi Samakkee 58/20 Samakkee Rd.,
+              Tha Sai, Muang Nonthaburi, Nonthaburi 11000{" "}
+              <Tooltip title="Copy">
+                <IconButton
+                  size="small"
+                  className={classes.copy}
+                  onClick={() =>
+                    copy(`70/535 Prachaniwet 2 Soi Samakkee 58/20 Samakkee Rd., Tha Sai, Muang Nonthaburi, Nonthaburi
+                    11000`)
+                  }
+                >
+                  <ContentCopy fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </Typography>
+            {/* </Grid> */}
           </Grid>
+          {/* <Grid item xs={2} md={2} lg={2}></Grid> */}
+          {/* <Grid item xs={10} md={10} lg={10}> */}
         </Grid>
       </Grid>
 
@@ -146,7 +193,7 @@ function Contact() {
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={10}>
-            <Typography align="left" variant="h6" className={classes.sub}>
+            <Typography align="left" variant="body1" className={classes.sub}>
               086 324 6039{" "}
               <Tooltip title="Copy">
                 <IconButton
@@ -180,7 +227,7 @@ function Contact() {
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={10}>
-            <Typography align="left" variant="h6" className={classes.sub}>
+            <Typography align="left" variant="body1" className={classes.sub}>
               sales-nt@hotmail.com{" "}
               <Tooltip title="Copy">
                 <IconButton
@@ -204,7 +251,7 @@ function Contact() {
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={10}>
-            <Typography align="left" variant="h6" className={classes.sub}>
+            <Typography align="left" variant="body1" className={classes.sub}>
               บริษัท นายน์ เทคนิคอล เซอร์วิส จำกัด{" "}
               <Tooltip title="Go to Link">
                 <IconButton
