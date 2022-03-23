@@ -15,6 +15,16 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginBottom: -5,
     color: "#FFC300",
+    fontSize: '1rem',
+    '@media (min-width:300px)': {
+      fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.75rem',
+    }
   },
   subtitle: {
     paddingTop: "2%",
@@ -59,14 +69,14 @@ function Equipment() {
           </Typography>
           <Divider className={classes.divider}/>
           <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
+            <AssignmentTurnedIn className={classes.icon}  />{" "}
             จัดหาอะไหล่อุตสาหกรรม และจำหน่ายอุปกรณ์ไฟฟ้าแบบครบวงจร
           </Typography>
           <Typography align="left" variant="body1">
             (Supply Industrial Parts and Sells a Full Range of Electrical Equipment)
           </Typography>
           <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
+            <AssignmentTurnedIn className={classes.icon}  />{" "}
             ดูแลการบริการหลังการขาย
           </Typography>
           <Typography align="left" variant="body1">

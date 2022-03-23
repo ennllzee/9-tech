@@ -12,12 +12,31 @@ const useStyles = makeStyles((theme) => ({
   title: {
     background: "rgba(0, 0, 0, 0.5)",
     color: "white",
+    padding: "0 1rem",
+  },
+  subtitle: {
+    background: "rgba(0, 0, 0, 0.5)",
+    color: "white",
+    padding: "0 1rem",
+    fontSize: "1.5rem",
+    "@media (min-width:300px)": {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "2rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "2.75rem",
+    },
   },
 }));
 
 function Home() {
   const classes = useStyles();
-  
+
   return (
     <Grid
       container
@@ -30,7 +49,7 @@ function Home() {
         <Typography align="center" variant="h1" className={classes.title}>
           9 TECHNICAL SERVICE
         </Typography>
-        <Typography align="center" variant="body1" className={classes.title}>
+        <Typography align="center" variant="body1" className={classes.subtitle}>
           บริษัท นายย์ เทคนิคอล เซอร์วิส จำกัด | 9 Technical service co., ld
         </Typography>
       </Grid>

@@ -23,6 +23,16 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginBottom: -5,
     color: "#FFC300",
+    fontSize: '1rem',
+    '@media (min-width:300px)': {
+      fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.75rem',
+    }
   },
   subtitle: {
     paddingTop: "2%",
@@ -75,7 +85,7 @@ function Electrical() {
           </Typography>
           <Divider className={classes.divider} />
           <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
+            <AssignmentTurnedIn className={classes.icon} />{" "}
             ตรวจสอบ ติดตั้ง ซ่อมแซม ไฟฟ้า แสงสว่าง บ้านเรือน อาคารหมู่บ้าน
             และโรงงานอุตสาหกรรม
           </Typography>
@@ -84,7 +94,7 @@ function Electrical() {
             Houses, Buildings, Villages and Factories)
           </Typography>
           <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
+            <AssignmentTurnedIn className={classes.icon} />{" "}
             ออกแบบ ติดตั้งระบบ ตู้สวตซ์บอร์ด MDB ตู้คอนโทรล Distribution Boards,
             ประกอบตู้คอนโทรล
           </Typography>
@@ -92,14 +102,14 @@ function Electrical() {
             (Design, System Installation, Switch Board, MDB, Distribution Boards, Control Cabinet)
           </Typography>
           <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
+            <AssignmentTurnedIn className={classes.icon}  />{" "}
             บริการด้านระบบไฟฟ้ากำลัง และรับปรึกษาระบบไฟฟ้าทั่วไป
           </Typography>
           <Typography align="left" variant="body1">
             (Power System Services and General Electrical System Consulting)
           </Typography>
           <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} fontSize="small" />{" "}
+            <AssignmentTurnedIn className={classes.icon}  />{" "}
             งานความปลอดภัย CCTV IP Camera Motion Sensor
           </Typography>
           <Typography align="left" variant="body1">

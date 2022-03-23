@@ -14,6 +14,16 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     padding: "1%",
     backgroundColor: "#FFC300",
+    fontSize: '2rem',
+    '@media (min-width:300px)': {
+      fontSize: '3rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '4rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '5rem',
+    }
   },
   sub: {
     backgroundColor: "white",
@@ -21,6 +31,16 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginBottom: -5,
+    fontSize: '1rem',
+    '@media (min-width:300px)': {
+      fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.75rem',
+    }
   },
   divide: {
     backgroundColor: "#FFC300",

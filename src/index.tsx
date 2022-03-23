@@ -11,15 +11,47 @@ const theme = createMuiTheme({
 }});
 
 theme.typography.h1 = {
-  fontSize: '1.75rem',
+  fontSize: '3rem',
   '@media (min-width:600px)': {
-    fontSize: '2.5rem',
+    fontSize: '3rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '4rem',
   },
   [theme.breakpoints.up('lg')]: {
     fontSize: '5rem',
+  },
+  [theme.breakpoints.up('xl')]: {
+    fontSize: '6rem',
+  },
+};
+
+theme.typography.body1 = {
+  fontSize: '.75rem',
+  '@media (min-width:300px)': {
+    fontSize: '1rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.25rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('xl')]: {
+    fontSize: '1.75rem',
+  },
+};
+
+theme.typography.h5 = {
+  fontSize: '1.5rem',
+  '@media (min-width:300px)': {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '3rem',
   },
 };
 

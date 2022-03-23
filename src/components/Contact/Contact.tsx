@@ -31,13 +31,43 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: "#FF5733",
+    fontSize: '2rem',
+    '@media (min-width:300px)': {
+      fontSize: '3rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '4rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '5rem',
+    }
   },
   icon: {
     marginBottom: -5,
     color: "#FF5733",
+    fontSize: '1rem',
+    '@media (min-width:300px)': {
+      fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2rem',
+    }
   },
   subtitle: {
     color: "#FF5733",
+    fontSize: '1rem',
+    '@media (min-width:300px)': {
+      fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2rem',
+    }
   },
   box: {
     paddingTop: "2%",
@@ -102,7 +132,7 @@ function Contact() {
           <Grid item xs={2} md={2} lg={2}></Grid>
           <Grid item xs={10} md={10} lg={10}>
             <Typography align="left" variant="body1" className={classes.sub}>
-              <MeetingRoom className={classes.icon} fontSize="small" />{" "}
+              <MeetingRoom className={classes.icon}  />{" "}
               สำนักงานใหญ่: 55/293 ซอยประเสริฐมนูกิจ 42 ถนนประเสริฐมนูกิจ
               แขวงนวมินทร์ เขตบึงกุ่ม กรุงเทพฯ 10230{" "}
               <Tooltip title="Copy">
@@ -114,7 +144,7 @@ function Contact() {
                     แขวงนวมินทร์ เขตบึงกุ่ม กรุงเทพฯ 10230`)
                   }
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -122,7 +152,7 @@ function Contact() {
           <Grid item xs={2} md={2} lg={2}></Grid>
           <Grid item xs={10} md={10} lg={10}>
             <Typography align="left" variant="body1" className={classes.sub}>
-              <MeetingRoomOutlined className={classes.icon} fontSize="small" /> Head
+              <MeetingRoomOutlined className={classes.icon}  /> Head
               Office: 55/293 Soi Prasert-Manukitch 42, Prasert-Manukitch Rd.,
               Nawamin, Khet Bueng Kum, Bangkok 10230{" "}
               <Tooltip title="Copy">
@@ -135,7 +165,7 @@ function Contact() {
                     )
                   }
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -143,7 +173,7 @@ function Contact() {
           <Grid item xs={2} md={2} lg={2}></Grid>
           <Grid item xs={10} md={10} lg={10}>
             <Typography align="left" variant="body1" className={classes.sub}>
-              <LocalShipping className={classes.icon} fontSize="small" />{" "}
+              <LocalShipping className={classes.icon}  />{" "}
               ที่อยู่ส่งเอกสาร / สินค้า: 70/535 หมู่บ้านประชานิเวศน์ 2
               ซอยสามัคคี 58/20 ถนนสามัคคี แขวงท่าทราย เขตนนทบุรี จังหวัดนนทบุรี
               11000{" "}
@@ -157,7 +187,7 @@ function Contact() {
                   11000`)
                   }
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -165,7 +195,7 @@ function Contact() {
           <Grid item xs={2} md={2} lg={2}></Grid>
           <Grid item xs={10} md={10} lg={10}>
             <Typography align="left" variant="body1" className={classes.sub}>
-              <LocalShippingOutlined className={classes.icon} fontSize="small" />{" "}
+              <LocalShippingOutlined className={classes.icon}  />{" "}
               Workshop: 70/535 Prachaniwet 2 Soi Samakkee 58/20 Samakkee Rd.,
               Tha Sai, Muang Nonthaburi, Nonthaburi 11000{" "}
               <Tooltip title="Copy">
@@ -177,7 +207,7 @@ function Contact() {
                     11000`)
                   }
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -201,7 +231,7 @@ function Contact() {
                   className={classes.copy}
                   onClick={() => copy("0863246039")}
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>{" "}
               / 097 121 1810{" "}
@@ -211,7 +241,7 @@ function Contact() {
                   className={classes.copy}
                   onClick={() => copy("0971211810")}
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -235,7 +265,7 @@ function Contact() {
                   className={classes.copy}
                   onClick={() => copy("sales-nt@hotmail.com")}
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -260,7 +290,7 @@ function Contact() {
                   href="https://web.facebook.com/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97-%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%99%E0%B9%8C-%E0%B9%80%E0%B8%97%E0%B8%84%E0%B8%99%E0%B8%B4%E0%B8%84%E0%B8%AD%E0%B8%A5-%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A7%E0%B8%B4%E0%B8%AA-%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94-120307878337801"
                   target="_blank"
                 >
-                  <Language fontSize="small" />
+                  <Language  />
                 </IconButton>
               </Tooltip>
             </Typography>
@@ -272,7 +302,7 @@ function Contact() {
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item xs={2} md={2} lg={2}>
             <Typography align="center" className={classes.subtitle}>
-              <QrCode className={classes.icon} fontSize="small" /> LINE
+              <QrCode className={classes.icon}  /> LINE
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={10}>

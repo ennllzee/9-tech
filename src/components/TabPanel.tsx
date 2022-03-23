@@ -37,10 +37,22 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "none",
     background: "rgba(0, 0, 0, 0.5)",
   },
-  tab: {
+  tabs: {
     color: "white",
     "& .MuiTabs-indicator": {
       backgroundColor: "#FF5733",
+    },
+  },
+  tablabel: {                                                   
+    fontSize: ".5rem",
+    "@media (min-width:300px)": {
+      fontSize: ".8rem",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
     },
   },
   top: {
@@ -50,13 +62,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface PageProps{
-  page: string
-  setPage: any
+interface PageProps {
+  page: string;
+  setPage: any;
 }
 
-export default function Page({page, setPage} : PageProps) {
-
+export default function Page({ page, setPage }: PageProps) {
   const handleChange = (event: any, newValue: any) => {
     setPage(newValue);
   };
@@ -74,12 +85,32 @@ export default function Page({page, setPage} : PageProps) {
         value={page}
         onChange={handleChange}
         variant="fullWidth"
-        className={classes.tab}
+        className={classes.tabs}
       >
-        <Tab label="Home" value="home" onClick={() => jump('home')}/>
-        <Tab label="Foundation" value="foundation" onClick={() => jump('foundation')}/>
-        <Tab label="Services" value="service" onClick={() => jump('service')}/>
-        <Tab label="Contact" value="contact" onClick={() => jump('contact')}/>
+        <Tab
+          label="Home"
+          value="home"
+          onClick={() => jump("home")}
+          className={classes.tablabel}
+        />
+        <Tab
+          label="Services"
+          value="service"
+          onClick={() => jump("service")}
+          className={classes.tablabel}
+        />
+        <Tab
+          label="Contact"
+          value="contact"
+          onClick={() => jump("contact")}
+          className={classes.tablabel}
+        />
+        <Tab
+          label="Foundation"
+          value="foundation"
+          onClick={() => jump("foundation")}
+          className={classes.tablabel}
+        />
       </Tabs>
     </AppBar>
   );

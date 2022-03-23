@@ -17,11 +17,33 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: "white",
+    fontSize: '2rem',
+    '@media (min-width:300px)': {
+      fontSize: '3rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '4rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '5rem',
+    }
   },
   body: {
     color: "white",
     padding: "3%",
     textIndent: "1.5rem",
+    fontSize: '.75rem',
+    '@media (min-width:300px)': {
+      fontSize: '1rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+      textIndent: "4rem",
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.75rem',
+      textIndent: "5rem",
+    },
   },
 }));
 
@@ -29,7 +51,7 @@ function Foundation() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} >
+    <div className={classes.root}>
       <Grid
         container
         className={classes.main}
@@ -44,7 +66,12 @@ function Foundation() {
         </Grid>
 
         <Grid item xs={10} md={10} lg={8}>
-          <Typography align="left" variant="body1" className={classes.body}>
+          <Typography
+            align="inherit"
+            variant="body1"
+            className={classes.body}
+            paragraph={true}
+          >
             บริษัท นายย์ เทคนิคอล เซอร์วิส จำกัด ก่อตั้งขึ้นเมื่อปี 2554
             บริหารงานโดยบุคคลที่มีประสบการณ์ในการทำงานมากกว่า 20 ปี
             ดำเนินธุรกิจเกี่ยวกับงานออกแบบ ติดตั้ง ซ่อมแซม
