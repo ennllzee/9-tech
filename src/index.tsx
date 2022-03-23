@@ -7,7 +7,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: ["Prompt", "cursive"].join(","),
+    fontFamily: ["Prompt"].join(","),
 }});
 
 theme.typography.h1 = {
