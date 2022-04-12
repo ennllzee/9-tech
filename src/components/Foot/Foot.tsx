@@ -3,9 +3,13 @@ import { Copyright } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/pic/bg.jpg"})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
     maxWidth: "100vw",
-    backgroundColor: "black",
-    paddingBottom: '1%'
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
   icon: {
     marginBottom: -5,
