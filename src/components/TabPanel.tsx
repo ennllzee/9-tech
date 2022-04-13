@@ -43,15 +43,18 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#FF5733",
     },
   },
-  tablabel: {                                                   
-    fontSize: ".5rem",
-    "@media (min-width:300px)": {
-      fontSize: ".8rem",
+  tablabel: {
+    fontSize: "0.75rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.75rem",
     },
     [theme.breakpoints.up("md")]: {
       fontSize: "1rem",
     },
     [theme.breakpoints.up("lg")]: {
+      fontSize: "1.25rem",
+    },
+    [theme.breakpoints.up("xl")]: {
       fontSize: "1.5rem",
     },
   },
@@ -100,15 +103,15 @@ export default function Page({ page, setPage }: PageProps) {
           className={classes.tablabel}
         />
         <Tab
-          label="Contact"
-          value="contact"
-          onClick={() => jump("contact")}
-          className={classes.tablabel}
-        />
-        <Tab
           label="Foundation"
           value="foundation"
           onClick={() => jump("foundation")}
+          className={classes.tablabel}
+        />
+        <Tab
+          label="Contact"
+          value="contact"
+          onClick={() => jump("contact")}
           className={classes.tablabel}
         />
       </Tabs>

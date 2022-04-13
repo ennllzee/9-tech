@@ -18,19 +18,6 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(0, 0, 0, 0.5)",
     color: "white",
     padding: "0 1rem",
-    fontSize: "1.5rem",
-    "@media (min-width:300px)": {
-      fontSize: "1.5rem",
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "2.5rem",
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "2.75rem",
-    },
   },
 }));
 

@@ -5,10 +5,9 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import {
-  AssignmentTurnedIn,
-} from "@material-ui/icons";
+import { AssignmentTurnedIn } from "@material-ui/icons";
 import Image from "../../models/Image";
+import ServiceData from "../../models/ServiceData";
 import CarouselShow from "./CarouselShow";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,16 +22,19 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginBottom: -5,
     color: "#FFC300",
-    fontSize: '1rem',
-    '@media (min-width:300px)': {
-      fontSize: '1.25rem',
+    fontSize: "1rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
     },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.25rem",
     },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.75rem',
-    }
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.75rem",
+    },
   },
   subtitle: {
     paddingTop: "2%",
@@ -46,7 +48,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Electrical() {
+interface ElectricalProps {
+  data: ServiceData;
+}
+
+function Electrical({ data }: ElectricalProps) {
   const classes = useStyles();
   const electrical: Image[] = [
     {
@@ -81,40 +87,18 @@ function Electrical() {
       <Grid item xs={12} md={9} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            งานระบบไฟฟ้า | Electrical Systems
+            {data.title}
           </Typography>
           <Divider className={classes.divider} />
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} />{" "}
-            ตรวจสอบ ติดตั้ง ซ่อมแซม ไฟฟ้า แสงสว่าง บ้านเรือน อาคารหมู่บ้าน
-            และโรงงานอุตสาหกรรม
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Inspect, Install, Repair, Electrical Systems, Lighting Systems,
-            Houses, Buildings, Villages and Factories)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon} />{" "}
-            ออกแบบ ติดตั้งระบบ ตู้สวตซ์บอร์ด MDB ตู้คอนโทรล Distribution Boards,
-            ประกอบตู้คอนโทรล
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Design, System Installation, Switch Board, MDB, Distribution Boards, Control Cabinet)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            บริการด้านระบบไฟฟ้ากำลัง และรับปรึกษาระบบไฟฟ้าทั่วไป
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Power System Services and General Electrical System Consulting)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            งานความปลอดภัย CCTV IP Camera Motion Sensor
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Security System: CCTV, IP Camera Motion Sensor)
-          </Typography>
+          {data.service.map((m: string) => {
+            return (
+              <>
+                <Typography align="left" variant="body1">
+                  <AssignmentTurnedIn className={classes.icon} /> {m}
+                </Typography>
+              </>
+            );
+          })}
         </Container>
       </Grid>
     </Grid>

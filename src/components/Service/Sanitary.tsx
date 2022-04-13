@@ -1,6 +1,13 @@
-import { Container, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
+import {
+  Container,
+  Divider,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import { AssignmentTurnedIn } from "@material-ui/icons";
 import Image from "../../models/Image";
+import ServiceData from "../../models/ServiceData";
 import CarouselShow from "./CarouselShow";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,16 +22,19 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginBottom: -5,
     color: "#FFC300",
-    fontSize: '1rem',
-    '@media (min-width:300px)': {
-      fontSize: '1.25rem',
+    fontSize: "1rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
     },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.25rem",
     },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.75rem',
-    }
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.75rem",
+    },
   },
   subtitle: {
     paddingTop: "2%",
@@ -32,13 +42,17 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(0, 0, 0, 0.7)",
   },
   divider: {
-      background: 'white',
-      marginTop: '1%',
-      marginBottom: '1%'
-  }
+    background: "white",
+    marginTop: "1%",
+    marginBottom: "1%",
+  },
 }));
 
-function Sanitary() {
+interface SanitaryProps {
+  data: ServiceData;
+}
+
+function Sanitary({ data }: SanitaryProps) {
   const classes = useStyles();
   const sanitary: Image[] = [
     {
@@ -73,37 +87,18 @@ function Sanitary() {
       <Grid item xs={12} md={9} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            งานระบบประปาและสุขาภิบาล | Sanitary System
+            {data.title}
           </Typography>
-          <Divider className={classes.divider}/>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            ออกแบบ ติดตั้ง ปรับปรุง แก้ไข ระบบประปาและสุขาภิบาล
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Design, Installation, Improvement of Water and Sanitation Systems)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            ตรวจสอบคุณภาพและความหนาของท่อ ติดตั้งปั๊ม Overhaul Pump
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Check the Quality and Thickness of the Pipe, Install the Overhaul Pump)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            งานติดต่อท่อน้ำ PPR, HDPE, ระบายน้ำฝน
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Installation of PPR, HDPE Water Pipes, Rainwater Drainage)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            บริการปรับปรุงระบบระบายอากาศ ภายในอาคารสูง
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Ventilation System Improvement Services Inside the High Building)
-          </Typography>
+          <Divider className={classes.divider} />
+          {data.service.map((m: string) => {
+            return (
+              <>
+                <Typography align="left" variant="body1">
+                  <AssignmentTurnedIn className={classes.icon} /> {m}
+                </Typography>
+              </>
+            );
+          })}
         </Container>
       </Grid>
     </Grid>

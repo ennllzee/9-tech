@@ -32,22 +32,14 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     padding: "3%",
     textIndent: "1.5rem",
-    fontSize: '.75rem',
-    '@media (min-width:300px)': {
-      fontSize: '1rem',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
-      textIndent: "4rem",
-    },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.75rem',
-      textIndent: "5rem",
-    },
   },
 }));
 
-function Foundation() {
+interface FoundationProps {
+  data: any
+}
+
+function Foundation({ data }: FoundationProps) {
   const classes = useStyles();
 
   return (
@@ -72,33 +64,7 @@ function Foundation() {
             className={classes.body}
             paragraph={true}
           >
-            บริษัท นายย์ เทคนิคอล เซอร์วิส จำกัด ก่อตั้งขึ้นเมื่อปี 2554
-            บริหารงานโดยบุคคลที่มีประสบการณ์ในการทำงานมากกว่า 20 ปี
-            ดำเนินธุรกิจเกี่ยวกับงานออกแบบ ติดตั้ง ซ่อมแซม
-            และแก้ไขระบบไฟฟ้าของเครื่องจักรและโรงงานอุตสาหกรรม
-            รวมถึงบริการหลังการติดตั้ง วิเคราะห์ถึงความต้องการของลูกค้าในทุก ๆ
-            ด้าน โดยทีมงานผู้เชี่ยวชาญและช่างชำนาญงานเฉพาะทาง
-            เน้นการทำงานอย่างละเอียดคำนึงถึงคุณภาพของผลงานที่ได้มาตรฐาน
-            งานทุกชิ้นผ่านการตรวจสอบและทดสอบก่อนส่งมอบ
-            เพื่อตอบสนองความต้องการของลูกค้าให้เกิดประโยชน์สูงสุดทั้งเวลาที่จำกัดและเงินที่ลงทุน
-            ทำให้บริษัทได้รับความไว้วางใจจากหน่วยงานต่าง ๆ
-            และโรงงานอุตสาหกรรมชั้นนำหลายแหล่ง
-
-            {/* 
-              9 Technical Service co.,ld  was established in 2011.
-              Managed by people with more than 20 years of work experience 
-              To carry on the business of designing, installing, repairing 
-              and modifying electrical systems of machinery and industrial plants.
-              including service after installation Analyzing the needs of every customer
-              side by a team of experts and specialist technicians
-              Especially on working in detail, taking into account the quality of the work that meets the standards, 
-              every work has been inspected and tested before delivery
-              In order to meet the needs of customers to get the most out of both the limited time and the money invested.
-              causing the company to gain trust from various agencies
-              and many leading industrial factories
-
-            
-            */}
+            {data}
           </Typography>
         </Grid>
       </Grid>

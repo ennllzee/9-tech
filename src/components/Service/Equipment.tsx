@@ -1,6 +1,13 @@
-import { Container, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
+import {
+  Container,
+  Divider,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import { AssignmentTurnedIn } from "@material-ui/icons";
 import Image from "../../models/Image";
+import ServiceData from "../../models/ServiceData";
 import CarouselShow from "./CarouselShow";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,16 +22,19 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginBottom: -5,
     color: "#FFC300",
-    fontSize: '1rem',
-    '@media (min-width:300px)': {
-      fontSize: '1.25rem',
+    fontSize: "1rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
     },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.25rem",
     },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.75rem',
-    }
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.75rem",
+    },
   },
   subtitle: {
     paddingTop: "2%",
@@ -32,13 +42,17 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(0, 0, 0, 0.5)",
   },
   divider: {
-      background: 'white',
-      marginTop: '1%',
-      marginBottom: '1%'
-  }
+    background: "white",
+    marginTop: "1%",
+    marginBottom: "1%",
+  },
 }));
 
-function Equipment() {
+interface EquipmentProps {
+  data: ServiceData;
+}
+
+function Equipment({ data }: EquipmentProps) {
   const classes = useStyles();
   const equipment: Image[] = [
     {
@@ -65,23 +79,18 @@ function Equipment() {
       <Grid item xs={12} md={9} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            อุปกรณ์ไฟฟ้า | Electrical Equipment
+            {data.title}
           </Typography>
-          <Divider className={classes.divider}/>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            จัดหาอะไหล่อุตสาหกรรม และจำหน่ายอุปกรณ์ไฟฟ้าแบบครบวงจร
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Supply Industrial Parts and Sells a Full Range of Electrical Equipment)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            ดูแลการบริการหลังการขาย
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Take Care of After-Sales Service)
-          </Typography>
+          <Divider className={classes.divider} />
+          {data.service.map((m: string) => {
+            return (
+              <>
+                <Typography align="left" variant="body1">
+                  <AssignmentTurnedIn className={classes.icon} /> {m}
+                </Typography>
+              </>
+            );
+          })}
         </Container>
       </Grid>
     </Grid>

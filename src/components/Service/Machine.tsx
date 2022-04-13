@@ -1,6 +1,7 @@
 import { Container, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
 import { AssignmentTurnedIn } from "@material-ui/icons";
 import Image from "../../models/Image";
+import ServiceData from "../../models/ServiceData";
 import CarouselShow from "./CarouselShow";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,15 +17,18 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: -5,
     color: "#FFC300",
     fontSize: '1rem',
-    '@media (min-width:300px)': {
-      fontSize: '1.25rem',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
     },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.25rem",
     },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.75rem',
-    }
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.75rem",
+    },
   },
   subtitle: {
     paddingTop: "2%",
@@ -38,7 +42,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Machine() {
+interface MachineProps {
+  data: ServiceData;
+}
+
+function Machine({ data }: MachineProps) {
   const classes = useStyles();
   const machine: Image[] = [
     {
@@ -73,37 +81,18 @@ function Machine() {
       <Grid item xs={12} md={9} lg={9} className={classes.subtitle}>
         <Container>
           <Typography align="left" variant="h5">
-            งานซ่อมเครื่องจักรอุตสาหกรรม | Machine Maintainance Services
+            {data.title}
           </Typography>
-          <Divider className={classes.divider}/>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            ติดตั้งและซ่อมแซม Inverter, PLC, Controller Board, AC/DC Servo Drive etc.
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Equipment and Repair Inverter, PLC, Controller Board, AC/DC Servo Drive etc.)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            ปรับปรุงโปรแกรมควบคุมเครื่องจักร วงจร Relay, PLC program
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Modify Relay Monitoring, PLC program)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            รับซ่อมเครื่องจักร ระบบไฟฟ้า, แมคคานิค, นิวเมติก, ไฮดรอลิก
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Repair Electrical, Mechanical, Pneumatic, Hydraulic Machines)
-          </Typography>
-          <Typography align="left" variant="body1">
-            <AssignmentTurnedIn className={classes.icon}  />{" "}
-            รับทำ Preventive Maintenance เครื่องจักรทุกชนิด
-          </Typography>
-          <Typography align="left" variant="body1">
-            (Preventive Maintenance of all types of Machines)
-          </Typography>
+          <Divider className={classes.divider} />
+          {data.service.map((m: string) => {
+            return (
+              <>
+                <Typography align="left" variant="body1">
+                  <AssignmentTurnedIn className={classes.icon} /> {m}
+                </Typography>
+              </>
+            );
+          })}
         </Container>
       </Grid>
     </Grid>
