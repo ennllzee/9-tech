@@ -37,17 +37,16 @@ const eng: Data = {
       ],
     },
   },
-  foundation: `บริษัท นายย์ เทคนิคอล เซอร์วิส จำกัด ก่อตั้งขึ้นเมื่อปี 2554
-    บริหารงานโดยบุคคลที่มีประสบการณ์ในการทำงานมากกว่า 20 ปี
-    ดำเนินธุรกิจเกี่ยวกับงานออกแบบ ติดตั้ง ซ่อมแซม
-    และแก้ไขระบบไฟฟ้าของเครื่องจักรและโรงงานอุตสาหกรรม
-    รวมถึงบริการหลังการติดตั้ง วิเคราะห์ถึงความต้องการของลูกค้าในทุก ๆ
-    ด้าน โดยทีมงานผู้เชี่ยวชาญและช่างชำนาญงานเฉพาะทาง
-    เน้นการทำงานอย่างละเอียดคำนึงถึงคุณภาพของผลงานที่ได้มาตรฐาน
-    งานทุกชิ้นผ่านการตรวจสอบและทดสอบก่อนส่งมอบ
-    เพื่อตจอบสนองความต้องการของลูกค้าให้เกิดประโยชน์สูงสุดทั้งเวลาที่จำกัดและเงินที่ลงทุน
-    ทำให้บริษัทได้รับความไว้วางใจจากหน่วยงานต่าง ๆ
-    และโรงงานอุตสาหกรรมชั้นนำหลายแหล่ง`,
+  foundation: `9 Technical service co., ld was established in 2011. 
+    Managed by experienced people Experience working for more than 20 years, 
+    doing business about designing, installing, repairing, and fixing electrical systems of machines and industrial plants
+    including service after installation. Analyzing the needs of every customer
+    side by a team of experts and specialist technicians.
+    Emphasis on detailed work, taking into account the quality of work that meets standards.
+    Every work is inspected and tested before delivery.
+    In order to meet the needs of customers to get the most out of both the limited time and the money invested.
+    causing the company to gain trust from various agencies
+    and many leading industrial factories.`,
   contact: {
     company: "9 Technical service co., ld",
     addressTopic: "Head Office: ",
@@ -60,3 +59,4 @@ const eng: Data = {
 };
 
 export default eng;
+
